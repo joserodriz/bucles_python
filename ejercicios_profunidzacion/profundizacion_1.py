@@ -27,15 +27,26 @@ sino que va hasta el anterior.
 print('Comenzamos a ponernos serios!')
 # Empezar aquí la resolución del ejercicio
 
-# inicio = ....
-# fin = ....
+inicio = int(input('Ingrese un numero de inicio\n'))
+fin = int(input('Ingrese un numero de fin\n'))
 
-# cantidad_numeros ....
-# sumatoria ....
+cantidad_numeros = 0
+sumatoria = 0
+
+secuencia = range(inicio, fin + 1)
 
 # bucle.....
 
+for i in secuencia:
+    sumatoria = sumatoria + i
+    cantidad_numeros += 1
+
+
 # Al terminar el bucle calcular el promedio como:
-# promedio = sumatoria / cantidad_numeros
+
+promedio = sumatoria / cantidad_numeros
 
 # Imprimir resultado en pantalla
+
+print('Sumatoria = {}'.format(sumatoria))
+print('Promedio = {}'.format(promedio))

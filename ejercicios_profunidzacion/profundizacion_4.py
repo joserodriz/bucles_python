@@ -10,8 +10,14 @@
 # de mucho más tiempo para abordar estos temas por su cuenta.
 # Requiere mayor tiempo de dedicación e investigación autodidacta.
 
-temp_dataloger = [12.8, 18.6, 14.5, 20.8, 12.1, 21.2, 13.5, 18.6,
-                  14.7, 19.6, 11.2, 18.4]
+#temp_dataloger = [12.8, 18.6, 14.5, 20.8, 12.1, 21.2, 13.5, 18.6,
+ #                 14.7, 19.6, 11.2, 18.4]
+
+
+temp_dataloger = [9, 10, 13.9, 12, 12.1, 11.2, 13.5, 11.6,
+                  10.7, 12.6, 11.2, 13.4]
+
+
 
 # IMPORTANTE: NO borrar los comentarios en VERDE o NARANJA
 
@@ -50,6 +56,19 @@ temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el pr
 temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
 # Colocar el bucle aqui......
+temperatura_max = temp_dataloger[0]
+temperatura_min = temp_dataloger[0]
+
+for i in temp_dataloger:
+
+    if(i > temperatura_max):
+        temperatura_max = i
+
+    if(i < temperatura_min):
+        temperatura_min = i
+
+    temperatura_sumatoria += i
+
 
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
@@ -57,12 +76,22 @@ temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la
 # función "max" --> https://www.w3schools.com/python/ref_func_max.asp
 # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
 
-# Al finalizar el bucle debe calcular el promedio como:
-# temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
+if(temperatura_max == max(temp_dataloger)):
+    print('Se verifica que la temperatura {} es la maxima'.format(temperatura_max))
 
+if(temperatura_min == min(temp_dataloger)):
+    print('Se verifica que la temperatura {} es la minima'.format(temperatura_min))
+
+# Al finalizar el bucle debe calcular el promedio como:
+temperatura_len = len(temp_dataloger)
+temperatura_promedio = round(temperatura_sumatoria / temperatura_len, 2)
+print('La temperatura promedio es: {}'.format(temperatura_promedio))
 # Corroboren los resultados de temperatura_sumatoria
 # usando la función "sum"
 # función "sum" --> https://www.w3schools.com/python/ref_func_sum.asp
+
+if(temperatura_sumatoria == sum(temp_dataloger)):
+    print('La sumatoria de temperaturas se ha verificado correctamente')
 
 '''
 Una vez que tengamos nuestros valores correctamente calculados debemos
@@ -83,3 +112,14 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+if(temperatura_min > 19 and temperatura_max < 28):
+    print('La epoca del año es verano')
+
+if(temperatura_min > 11 and temperatura_max < 20):
+    print('La epoca del año es otoño')
+
+if(temperatura_min > 8 and temperatura_max < 14):
+    print('La epoca del año es invierno')
+
+if(temperatura_min > 10 and temperatura_max < 24):
+    print('La epoca del año es primavera')
